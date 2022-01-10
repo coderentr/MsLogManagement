@@ -7,4 +7,4 @@ Micro Services ExceptionLog Management Methods
 <li>  Use RabbitMq </li>
 </ul>
 
-<p>As you know exception logs management is very important for developer.  And MicroService architecth  has a lot micro services.  </p>
+<!--<p>As you know exception logs management is very important for developer.  And MicroService architecth  has a lot micro services.  </p>
