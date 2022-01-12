@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{3C59569B-8831-42B4-9A3F-E71127B7E441}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{3C59569B-8831-42B4-9A3F-E71127B7E441}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceA", "ServiceA\ServiceA.csproj", "{7659B042-663F-4D77-87ED-ECB7AE472BF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceA", "ServiceA\ServiceA.csproj", "{7659B042-663F-4D77-87ED-ECB7AE472BF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceB", "ServiceB\ServiceB.csproj", "{C4EC51E1-40DF-4764-900F-C239AF91CF0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceB", "ServiceB\ServiceB.csproj", "{C4EC51E1-40DF-4764-900F-C239AF91CF0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionLogService", "ExceptionLogService\ExceptionLogService.csproj", "{887438F7-578B-4F7A-86EA-494217983744}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionLogService", "ExceptionLogService\ExceptionLogService.csproj", "{887438F7-578B-4F7A-86EA-494217983744}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExlogWorkerService", "ExlogWorkerService\ExlogWorkerService.csproj", "{D2D85FB0-5758-498B-A437-6D3CBF961DF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{887438F7-578B-4F7A-86EA-494217983744}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{887438F7-578B-4F7A-86EA-494217983744}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{887438F7-578B-4F7A-86EA-494217983744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D85FB0-5758-498B-A437-6D3CBF961DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D85FB0-5758-498B-A437-6D3CBF961DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D85FB0-5758-498B-A437-6D3CBF961DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D85FB0-5758-498B-A437-6D3CBF961DF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

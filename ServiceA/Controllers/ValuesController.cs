@@ -60,6 +60,8 @@ namespace ServiceA.Controllers
                     Message = ex.Message,
                     ServiceName = "AService",
                     StackTrace = ex.StackTrace,
+                    CreatedBy = "cleims.email ets.",
+                    CreatedDate = DateTime.Now,
                 };
                 _logService.Produce_Exception_Log_To_RabbitMq(exModel);
                 return BadRequest(new { message = ex.Message });
