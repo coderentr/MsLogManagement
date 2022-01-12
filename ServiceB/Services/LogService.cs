@@ -1,4 +1,6 @@
-﻿using ServiceB.Dtos;
+﻿using Newtonsoft.Json;
+using RabbitMQ.Client;
+using ServiceB.Dtos;
 using ServiceB.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -32,6 +34,32 @@ namespace ServiceB.Services
             catch (Exception)
             {
                 throw;
+            }
+        }
+        public void Produce_Exception_Log_To_RabbitMq(ExceptionModel model)
+        {
+            try
+            {
+                var factory = new ConnectionFactory() { HostName = "localhost" };
+                using (IConnection connection = factory.CreateConnection())
+                using (IModel channel = connection.CreateModel())
+                {
+                    channel.QueueDeclare(queue: "Exception_Log_Management_Queue",
+                                         durable: false,
+                                         exclusive: false,
+                                         autoDelete: false,
+                                         arguments: null);
+                    string message = JsonConvert.SerializeObject(model);
+                    var body = Encoding.UTF8.GetBytes(message);
+                    channel.BasicPublish(exchange: "",
+                                         routingKey: "Exception_Log_Management_Queue",
+                                         basicProperties: null,
+                                         body: body);
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
         public string ReturnRestApiUrl()

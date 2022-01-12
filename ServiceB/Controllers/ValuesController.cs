@@ -44,5 +44,29 @@ namespace ServiceB.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+        [HttpPost("ExampleRabbitMqLog")]
+        public IActionResult ExampleRabbitMqLog()
+        {
+            try
+            {
+                var demoarr = new int[] { 1, 2, 3 };
+                return Ok(demoarr[4]);
+            }
+            catch (Exception ex)
+            {
+                var exModel = new ExceptionModel
+                {
+                    ActionName = "ExampleRabbitMqLog",
+                    Message = ex.Message,
+                    ServiceName = "BService",
+                    StackTrace = ex.StackTrace,
+                    CreatedBy = "cleims.email ets.",
+                    CreatedDate = DateTime.Now,
+                };
+                _logService.Produce_Exception_Log_To_RabbitMq(exModel);
+                return BadRequest(new { message = ex.Message });
+            }
+        }
     }
 }
